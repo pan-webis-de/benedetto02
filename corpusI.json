@@ -1,0 +1,16 @@
+[
+  {"author": "A", "files": ["12ItrainA1.TXT", "12ItrainA2.TXT"]},
+  {"author": "B", "files": ["12ItrainB1.TXT", "12ItrainB2.TXT"]},
+  {"author": "C", "files": ["12ItrainC1.TXT", "12ItrainC1.TXT"]},
+  {"author": "D", "files": ["12ItrainD1.TXT", "12ItrainD2.TXT"]},
+  {"author": "E", "files": ["12ItrainE1.TXT", "12ItrainE2.TXT"]},
+  {"author": "F", "files": ["12ItrainF1.TXT", "12ItrainF2.TXT"]},
+  {"author": "G", "files": ["12ItrainG1.TXT", "12ItrainG2.TXT"]},
+  {"author": "H", "files": ["12ItrainH1.TXT", "12ItrainH2.TXT"]},
+  {"author": "I", "files": ["12ItrainI1.TXT", "12ItrainI2.TXT"]},
+  {"author": "J", "files": ["12ItrainJ1.TXT", "12ItrainJ2.TXT"]},
+  {"author": "K", "files": ["12ItrainK1.TXT", "12ItrainK2.TXT"]},
+  {"author": "L", "files": ["12ItrainL1.TXT", "12ItrainL2.TXT"]},
+  {"author": "M", "files": ["12ItrainM1.TXT", "12ItrainM2.TXT"]},
+  {"author": "N", "files": ["12ItrainN1.TXT", "12ItrainN2.TXT"]}
+]

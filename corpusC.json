@@ -1,0 +1,10 @@
+[
+  {"author": "A", "files": ["12CtrainA1.txt", "12CtrainA2.txt"]},
+  {"author": "B", "files": ["12CtrainB1.txt", "12CtrainB2.txt"]},
+  {"author": "C", "files": ["12CtrainC1.txt", "12CtrainC1.txt"]},
+  {"author": "D", "files": ["12CtrainD1.txt", "12CtrainD2.txt"]},
+  {"author": "E", "files": ["12CtrainE1.txt", "12CtrainE2.txt"]},
+  {"author": "F", "files": ["12CtrainF1.txt", "12CtrainF2.txt"]},
+  {"author": "G", "files": ["12CtrainG1.txt", "12CtrainG2.txt"]},
+  {"author": "H", "files": ["12CtrainH1.txt", "12CtrainH2.txt"]}
+]
