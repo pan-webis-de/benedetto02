@@ -1,6 +1,6 @@
+import warnings
 import random
 import os
-import warnings
 import zlib
 
 
@@ -25,8 +25,8 @@ def dict_entropy(corpus, unknown, level=6):
     result += len(obj.flush())
     return result
 
-def create_ranking(corpus_info, unknown_filename,
-        method=dict_entropy):
+def create_simple_ranking(corpus_info, unknown_filename,
+        method=relative_zlib_entropy):
     unknown_sample = extract_sample(unknown_filename, 8*1024)
     results = []
     for entry in corpus_info:
