@@ -90,6 +90,31 @@ def test_all_corpora():
                 test_corpus(letter, func)
             sys.stdout.flush()
 
+def test_demo():
+    relative = partial(relative_zlib_entropy)
+    dictionary = partial(dict_entropy)
+    methods = [
+        ("dictionary, single run",
+        partial(create_simple_ranking, method=dictionary)),
+        ("dictionary, 10 runs",
+        partial(create_author_ranking, method=dictionary,
+            runs=10)),
+        ("dictionary, 20 runs",
+        partial(create_author_ranking, method=dictionary,
+            runs=20)),
+        ("relative, single run",
+        partial(create_simple_ranking, method=relative)),
+        ("relative, 10 runs",
+        partial(create_author_ranking, method=relative,
+            runs=10)),
+        ("relative, 20 runs",
+        partial(create_author_ranking, method=relative,
+            runs=20))]
+    for name, func in methods:
+        print (name)
+        test_corpus("I+J", func)
+    sys.stdout.flush()
+
 def test_table():
     for i in range(10):
         print ("Compression level:", i)
@@ -117,14 +142,13 @@ def test_table():
             test_corpus("I+J", func)
         sys.stdout.flush()
 
-
 def compare_impl():
     corpus_info = import_corpus_info("corpusI.json")
     for i in range(1,15):
         unknown_file = "12Itest" + str(i).zfill(2)
         compare_methods(corpus_info, unknown_file + ".txt")
 
-warnings.simplefilter("ignore")
-#logging.basicConfig(level=logging.INFO)
+#warnings.simplefilter("ignore")
+logging.basicConfig(level=logging.INFO)
 
-test_table()
+test_demo()
