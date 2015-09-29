@@ -7,22 +7,12 @@ import sys
 import warnings
 
 from relativzip import (create_simple_ranking, relative_zlib_entropy,
-                       dict_entropy, compare_methods)
+                       dict_entropy)
 
 def import_json(filename):
     with open(filename) as f:
         result = json.load(f)
     return result
-
-def create_author_ranking(corpus_info, unknown_filename, method, runs = 20):
-    author_score = Counter()
-    for i in range(runs):
-        simple_ranking = create_simple_ranking(corpus_info,
-                unknown_filename, method = method)
-        best_author = simple_ranking[0][0]
-        second_author = simple_ranking[1][0]
-        author_score[best_author] += 1
-    return author_score.most_common()
 
 def test_corpus(letter, ranking_method):
     ground_truth = import_json("ground-truth.json")[letter]
