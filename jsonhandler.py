@@ -60,15 +60,13 @@ GT_FNAME = "ground-truth.json"
 
 # always run this method first to evaluate the meta json file. Pass the directory of the corpus (where meta-file.json is situated)
 def loadJson(corpus):
-	global corpusdir, upath, candidates, unknowns, encoding, language
+	global corpusdir, upath, candidates, unknowns
 	corpusdir += corpus
 	mfile = open(os.path.join(corpusdir, META_FNAME), "r")
 	metajson = json.load(mfile)
 	mfile.close()
 
 	upath += os.path.join(corpusdir, metajson["folder"])
-	encoding += metajson["encoding"]
-	language += metajson["language"]
 	candidates += [author["author-name"] for author in metajson["candidate-authors"]]
 	unknowns += [text["unknown-text"] for text in metajson["unknown-texts"]]
 
@@ -131,8 +129,6 @@ def loadGroundTruth():
 		trueAuthors.append(tjson["ground-truth"][i]["true-author"])
 		
 # initialization of global variables
-encoding = ""
-language = ""
 corpusdir = ""
 upath = ""
 candidates = []

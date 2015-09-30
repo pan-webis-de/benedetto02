@@ -20,6 +20,8 @@ def tira(corpusdir, outputdir):
     for filename in unknowns:
         ranking = create_author_ranking(candidates, filename,
                 method=dict_entropy)
+#        ranking = create_simple_ranking(candidates, filename,
+#                method=relative_zlib_entropy)
         author = ranking[0][0]
         score = 0.5
         authors.append(author)
