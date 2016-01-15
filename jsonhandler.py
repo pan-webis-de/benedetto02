@@ -55,9 +55,10 @@ loadGroundTruth()
 
 import os
 import json
+import codecs
 
 META_FNAME = "meta-file.json"
-OUT_FNAME = "out.json"
+OUT_FNAME = "answers.json"
 GT_FNAME = "ground-truth.json"
 
 # always run this method first to evaluate the meta json file. Pass the
@@ -65,13 +66,15 @@ GT_FNAME = "ground-truth.json"
 
 
 def loadJson(corpus):
-    global corpusdir, upath, candidates, unknowns
+    global corpusdir, upath, candidates, unknowns, encoding, language
     corpusdir += corpus
     mfile = open(os.path.join(corpusdir, META_FNAME), "r")
     metajson = json.load(mfile)
     mfile.close()
 
     upath += os.path.join(corpusdir, metajson["folder"])
+    encoding += metajson["encoding"]
+    language += metajson["language"]
     candidates += [author["author-name"]
                    for author in metajson["candidate-authors"]]
     unknowns += [text["unknown-text"] for text in metajson["unknown-texts"]]
@@ -91,7 +94,7 @@ def loadTraining():
 
 
 def getTrainingText(cand, fname):
-    dfile = open(os.path.join(corpusdir, cand, fname))
+    dfile = codecs.open(os.path.join(corpusdir, cand, fname), "r", "utf-8")
     s = dfile.read()
     dfile.close()
     return s
@@ -109,7 +112,7 @@ def getTrainingBytes(cand, fname):
 
 
 def getUnknownText(fname):
-    dfile = open(os.path.join(upath, fname))
+    dfile = codecs.open(os.path.join(upath, fname), "r", "utf-8")
     s = dfile.read()
     dfile.close()
     return s
@@ -154,6 +157,8 @@ def loadGroundTruth():
         trueAuthors.append(tjson["ground-truth"][i]["true-author"])
 
 # initialization of global variables
+encoding = ""
+language = ""
 corpusdir = ""
 upath = ""
 candidates = []
