@@ -2,7 +2,7 @@
 
 This is a reimplementation of the approach to authorship attribution originally described in
 
-> D. Benedetto, E. Caglioti, and V. Loreto. [Language trees and zipping](http://samarcanda.phys.uniroma1.it/vittorioloreto/PAPERS/2002/Benedetto_PhysRevLett_2002.pdf). Physical Review Letters, 88 (4), 048702, 2002 [[paper](http://samarcanda.phys.uniroma1.it/vittorioloreto/PAPERS/2002/Benedetto_PhysRevLett_2002.pdf)]
+> Dario Benedetto, Emanuele Caglioti, and Vittorio Loreto. [Language trees and zipping](http://samarcanda.phys.uniroma1.it/vittorioloreto/PAPERS/2002/Benedetto_PhysRevLett_2002.pdf). Physical Review Letters, 88 (4), 048702, 2002 [[paper](http://samarcanda.phys.uniroma1.it/vittorioloreto/PAPERS/2002/Benedetto_PhysRevLett_2002.pdf)]
 
 It was reimplemented as part of a science reproducibility study alongside [14 other authorship attribution approaches](https://github.com/search?q="Who+wrote+the+web"+user:pan-webis-de). The results of the reproducibility study can be found in
 
